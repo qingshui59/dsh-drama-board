@@ -69,7 +69,13 @@ brew install ffmpeg
 
 ## 在 Harness 中使用
 
-在插件管理器中安装当前目录，或沿用 `dsh plugin --profile desktop add dsh-drama-board`。当前工作区是通过本地目录链接安装的。
+```bash
+git clone https://github.com/qingshui59/dsh-drama-board.git
+cd dsh-drama-board
+npm run build          # 生成 client.js（仓库里已带一份，改了 src/ 才需要）
+```
+
+然后在插件管理器中安装这个目录，或用 `dsh plugin --profile desktop add <目录的绝对路径>`（本机就是通过本地目录链接安装的）。
 
 **从 0.2 升级后需要重启一次 Harness**：后端（`index.js` 与 `host/`）在启动时加载，只刷新页面读到的是新界面加旧后端，这时页面顶部会提示「后端还是旧版本」。
 
