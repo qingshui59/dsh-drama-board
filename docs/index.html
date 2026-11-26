@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>映序 Studio · AI 短剧工作台（在线演示）</title>
+<meta name="description" content="映序 Studio 是 DeepSeek Harness 的 AI 短剧制作插件：立项、角色定妆、分集、分镜出图、配音，最后在本机合成竖屏 MP4。这是不需要后端的界面演示。">
+<meta name="theme-color" content="#10141d">
+<link rel="icon" href="./icon.svg">
+<style>
+  html, body, #app { height: 100%; margin: 0 }
+  body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; background: #f3f5f9 }
+  #demo-note {
+    position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 99999;
+    display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; justify-content: center;
+    max-width: calc(100vw - 24px); padding: 8px 14px; border-radius: 999px;
+    background: rgba(16, 20, 29, .92); color: #f4f6fb; font-size: 12px; line-height: 1.6;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, .28); backdrop-filter: blur(8px);
+  }
+  #demo-note a { color: #9cc8ff; text-decoration: none }
+  #demo-note a:hover { text-decoration: underline }
+  #demo-note .sep { opacity: .35 }
+  #demo-note button {
+    border: 0; border-radius: 999px; padding: 2px 8px; cursor: pointer;
+    background: rgba(255, 255, 255, .12); color: inherit; font: inherit;
+  }
+  #demo-note button:hover { background: rgba(255, 255, 255, .2) }
+  @media (max-width: 720px) {
+    #demo-note { bottom: 72px; border-radius: 12px; font-size: 11px; padding: 6px 10px; gap: 2px 8px }
+    #demo-note .wide { display: none }
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="demo-note" role="note">
+  <span>界面演示 · 数据只存在这台浏览器</span>
+  <span class="sep wide">|</span>
+  <span class="wide">出图、配音、合成需在本机运行</span>
+  <a href="https://github.com/qingshui59/dsh-drama-board#readme" target="_blank" rel="noreferrer">安装说明</a>
+  <button type="button" id="demo-reset">重置示例</button>
+  <button type="button" id="demo-hide" aria-label="收起提示">×</button>
+</div>
+
+<script src="vendor/react.js"></script>
+<script src="vendor/react-dom.js"></script>
+<script src="demo-data.js"></script>
+<script>
+// 演示用的假后端：把 client.js 发给 /drama-board/api 的请求接住，
+// 读写成浏览器里的 localStorage，所以刷新后改动还在，但不会发往任何服务器。
+(function () {
+  'use strict'
+  var API = '/drama-board/api'
+  var STORAGE_KEY = 'dsh-drama-board-demo-v1'
+  var demo = window.__DEMO__ || { state: { projects: [], activeId: null }, settings: { settings: { keys: {} } } }
+  var settings = JSON.parse(JSON.stringify((demo.settings && demo.settings.settings) || { keys: {} }))
+  var state = demo.state
+
+  try {
+    var saved = window.localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+      var parsed = JSON.parse(saved)
+      if (parsed && Array.isArray(parsed.projects)) state = parsed
+    }
+  } catch (error) { /* 无痕模式下存不了，忽略 */ }
+
+  function persist() {
+    try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state)) } catch (error) {}
+  }
+  function json(payload, status) {
+    return new Response(JSON.stringify(payload), {
+      status: status || 200,
+      headers: { 'content-type': 'application/json; charset=utf-8' },
+    })
+  }
+  function view() {
+    return Object.assign({ ok: true }, demo.settings, { settings: settings })
+  }
+  function merge(patch) {
+    ;['text', 'image', 'video', 'tts', 'render'].forEach(function (section) {
+      if (patch && patch[section] && typeof patch[section] === 'object') {
+        settings[section] = Object.assign({}, settings[section], patch[section])
+      }
+    })
+    if (patch && patch.keys && typeof patch.keys === 'object') {
+      Object.keys(patch.keys).forEach(function (name) {
+        if (!/^[a-z][a-zA-Z0-9]{1,30}$/.test(name)) return
+        var value = patch.keys[name]
+        settings.keys[name] = value === null ? { set: false, hint: '' } : { set: true, hint: '仅演示，不会发出' }
+      })
+    }
+  }
+
+  var OFFLINE = '这是在线演示：AI 生成、出图、配音和合成需要在本机运行后端。克隆仓库后 npm run dev 就能完整使用。'
+  var routes = {
+    'GET /state': function () { return json({ ok: true, state: state, model: null, dataFile: 'localStorage' }) },
+    'POST /state': function (body) {
+      if (body && body.state && Array.isArray(body.state.projects)) { state = body.state; persist() }
+      return json({ ok: true, savedAt: Date.now() })
+    },
+    'GET /settings': function () { return json(view()) },
+    'POST /settings': function (body) { merge(body); return json(view()) },
+    'POST /settings/test': function () { return json({ ok: false, error: OFFLINE }, 400) },
+    'POST /generate': function () { return json({ ok: false, error: OFFLINE }, 400) },
+    'GET /jobs': function () { return json({ ok: true, jobs: [], now: Date.now() }) },
+    'POST /jobs': function () { return json({ ok: false, error: OFFLINE }, 400) },
+    'POST /jobs/cancel': function () { return json({ ok: true, jobs: [] }) },
+    'POST /jobs/ack': function () { return json({ ok: true }) },
+    'GET /assets': function () { return json({ ok: true, assets: [] }) },
+    'POST /media/upload': function () { return json({ ok: false, error: OFFLINE }, 400) },
+    'POST /media/delete': function () { return json({ ok: true }) },
+  }
+
+  var realFetch = window.fetch.bind(window)
+  window.fetch = function (input, init) {
+    var url = typeof input === 'string' ? input : (input && input.url) || ''
+    if (url.indexOf(API) !== 0) return realFetch(input, init)
+    var method = ((init && init.method) || 'GET').toUpperCase()
+    var pathname = url.slice(API.length).split('?')[0]
+    if (pathname.indexOf('/media/') === 0) return Promise.resolve(json({ ok: false, error: '在线演示不含素材文件。' }, 404))
+    var handler = routes[method + ' ' + pathname]
+    if (!handler) return Promise.resolve(json({ ok: false, error: '演示后端没有这个接口：' + method + ' ' + pathname }, 404))
+    var body = null
+    if (init && typeof init.body === 'string') { try { body = JSON.parse(init.body) } catch (error) {} }
+    return Promise.resolve(handler(body))
+  }
+
+  var reset = document.getElementById('demo-reset')
+  if (reset) reset.addEventListener('click', function () {
+    try { window.localStorage.removeItem(STORAGE_KEY) } catch (error) {}
+    window.location.reload()
+  })
+  var note = document.getElementById('demo-note')
+  var hide = document.getElementById('demo-hide')
+  try { if (window.sessionStorage.getItem('dsh-demo-note-hidden')) note.style.display = 'none' } catch (error) {}
+  if (hide) hide.addEventListener('click', function () {
+    note.style.display = 'none'
+    try { window.sessionStorage.setItem('dsh-demo-note-hidden', '1') } catch (error) {}
+  })
+})()
+</script>
+<script>
+// 独立运行时模拟 Harness 的模块加载器：接口全部走同源的 /drama-board/api（由上面的假后端接管）。
+window.__ModuleLoader__ = {
+  load({ factory }) {
+    const plugin = factory((name) => (name === 'react' ? React : null))
+    plugin.apply({
+      effect(fn) { fn() },
+      locale: { register() {}, bind() { return (key) => key } },
+      slots: {
+        inject(name, fn) { fn() },
+        register(meta, Component) {
+          if (meta.name === 'main') ReactDOM.createRoot(document.getElementById('app')).render(React.createElement(Component))
+        },
+      },
+    })
+  },
+}
+</script>
+<script src="client.js"></script>
+</body>
+</html>
