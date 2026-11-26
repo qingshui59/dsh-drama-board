@@ -50,7 +50,8 @@
 // 读写成浏览器里的 localStorage，所以刷新后改动还在，但不会发往任何服务器。
 (function () {
   'use strict'
-  var API = '/drama-board/api'
+  var API = 'api'
+  window.__DRAMA_API__ = API // client.js 里 const API 读这个值，<img>/<video> 的 src 也跟着变成相对路径
   var STORAGE_KEY = 'dsh-drama-board-demo-v1'
   var demo = window.__DEMO__ || { state: { projects: [], activeId: null }, settings: { settings: { keys: {} } } }
   var settings = JSON.parse(JSON.stringify((demo.settings && demo.settings.settings) || { keys: {} }))
@@ -106,7 +107,11 @@
     'POST /jobs': function () { return json({ ok: false, error: OFFLINE }, 400) },
     'POST /jobs/cancel': function () { return json({ ok: true, jobs: [] }) },
     'POST /jobs/ack': function () { return json({ ok: true }) },
-    'GET /assets': function () { return json({ ok: true, assets: [] }) },
+    'GET /assets': function (body, params) {
+      var pids = (params.get('pids') || '').split(',').filter(Boolean)
+      var list = (demo.assets || []).filter(function (item) { return !pids.length || pids.indexOf(item.pid) >= 0 })
+      return json({ ok: true, assets: list })
+    },
     'POST /media/upload': function () { return json({ ok: false, error: OFFLINE }, 400) },
     'POST /media/delete': function () { return json({ ok: true }) },
   }
@@ -117,12 +122,16 @@
     if (url.indexOf(API) !== 0) return realFetch(input, init)
     var method = ((init && init.method) || 'GET').toUpperCase()
     var pathname = url.slice(API.length).split('?')[0]
-    if (pathname.indexOf('/media/') === 0) return Promise.resolve(json({ ok: false, error: '在线演示不含素材文件。' }, 404))
+    // 图片、视频、配音是 docs/api/media/ 下的真实文件，浏览器直接取，不走假后端。
+    if (pathname.indexOf('/media/') === 0) {
+      if (method === 'GET') return realFetch(input, init)
+      return Promise.resolve(json({ ok: false, error: OFFLINE }, 400))
+    }
     var handler = routes[method + ' ' + pathname]
     if (!handler) return Promise.resolve(json({ ok: false, error: '演示后端没有这个接口：' + method + ' ' + pathname }, 404))
     var body = null
     if (init && typeof init.body === 'string') { try { body = JSON.parse(init.body) } catch (error) {} }
-    return Promise.resolve(handler(body))
+    return Promise.resolve(handler(body, new URLSearchParams(url.split('?')[1] || '')))
   }
 
   var reset = document.getElementById('demo-reset')

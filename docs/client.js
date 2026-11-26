@@ -619,7 +619,9 @@ window.__ModuleLoader__.load({
     const { useState, useEffect, useRef, useMemo, useCallback, useContext, createContext, Fragment } = React
     const cx = (...parts) => parts.filter(Boolean).join(' ')
 
-    const API = '/drama-board/api'
+    // 接口前缀。插件里用宿主的绝对路径；GitHub Pages 的演示页把它指成同级的 `api`，
+    // 这样 <img>/<video> 的 src 也能落到静态文件上（fetch 由页面里的假后端接管）。
+    const API = (typeof window !== 'undefined' && window.__DRAMA_API__) || '/drama-board/api'
     const GENRES = ['逆袭', '甜宠', '悬疑', '重生', '萌宝', '其他']
     const STYLES = ['写实', '国漫', '3D']
     const SHOT_SIZES = ['远景', '全景', '中景', '近景', '特写']

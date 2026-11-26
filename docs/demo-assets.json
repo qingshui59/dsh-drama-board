@@ -1,0 +1,229 @@
+[
+  {
+    "id": "i-mwn04apq-wn72td",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "i-mwn04apq-wn72td.jpg",
+    "kind": "image",
+    "mime": "image/jpeg",
+    "bytes": 122684,
+    "w": 720,
+    "h": 1280,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动",
+    "model": "Kwai-Kolors/Kolors",
+    "prompt": "电影感写实摄影，真实皮肤质感，自然光影，35mm 镜头，浅景深，低饱和冷色调，青蓝色阴影，局部硬光，氛围压抑，角色定妆照，单人半身肖像，正面平视镜头，表情自然，林夏，26岁，中国女性，黑色低马尾，左眉尾有一颗小痣，穿墨绿色便利店制服外套，胸前别着写有“夏”字的名牌，干净的浅灰色背景，柔和棚拍光，竖屏 9:16 构图",
+    "target": {
+      "kind": "character",
+      "id": "c-linxia"
+    },
+    "createdAt": 1795059567424
+  },
+  {
+    "id": "i-mwn04bld-zl2wva",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "i-mwn04bld-zl2wva.jpg",
+    "kind": "image",
+    "mime": "image/jpeg",
+    "bytes": 146495,
+    "w": 720,
+    "h": 1280,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动",
+    "model": "Kwai-Kolors/Kolors",
+    "prompt": "电影感写实摄影，真实皮肤质感，自然光影，35mm 镜头，浅景深，低饱和冷色调，青蓝色阴影，局部硬光，氛围压抑，角色定妆照，单人半身肖像，正面平视镜头，表情自然，老人，70岁左右，花白短发，消瘦，戴黑框眼镜，常穿一件褪色的明黄色雨衣，手里总拎着一盒牛奶，干净的浅灰色背景，柔和棚拍光，竖屏 9:16 构图",
+    "target": {
+      "kind": "character",
+      "id": "c-laoren"
+    },
+    "createdAt": 1795059568563
+  },
+  {
+    "id": "i-mwn052pu-ql9mop",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "i-mwn052pu-ql9mop.jpg",
+    "kind": "image",
+    "mime": "image/jpeg",
+    "bytes": 159373,
+    "w": 720,
+    "h": 1280,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动",
+    "model": "Kwai-Kolors/Kolors",
+    "prompt": "电影感写实摄影，真实皮肤质感，自然光影，35mm 镜头，浅景深，低饱和冷色调，青蓝色阴影，局部硬光，氛围压抑，近景镜头，近景，林夏站在便利店收银台后，抬头看向推门进来的人，冷白色顶灯，窗外下雨，人物设定——林夏：林夏，26岁，中国女性，黑色低马尾，左眉尾有一颗小痣，穿墨绿色便利店制服外套，胸前别着写有“夏”字的名牌，胶片颗粒，竖屏 9:16 构图",
+    "target": {
+      "kind": "shot",
+      "shotId": "s-rain-01",
+      "field": "image"
+    },
+    "createdAt": 1795059603716
+  },
+  {
+    "id": "i-mwn053lr-f7bhc7",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "i-mwn053lr-f7bhc7.jpg",
+    "kind": "image",
+    "mime": "image/jpeg",
+    "bytes": 155286,
+    "w": 720,
+    "h": 1280,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动",
+    "model": "Kwai-Kolors/Kolors",
+    "prompt": "电影感写实摄影，真实皮肤质感，自然光影，35mm 镜头，浅景深，低饱和冷色调，青蓝色阴影，局部硬光，氛围压抑，特写镜头，特写，林夏的手按在收银机上，指尖微微发抖，人物设定——林夏：林夏，26岁，中国女性，黑色低马尾，左眉尾有一颗小痣，穿墨绿色便利店制服外套，胸前别着写有“夏”字的名牌，胶片颗粒，竖屏 9:16 构图",
+    "target": {
+      "kind": "shot",
+      "shotId": "s-rain-02",
+      "field": "image"
+    },
+    "createdAt": 1795059604863
+  },
+  {
+    "id": "i-mwn056wo-254ci4",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "i-mwn056wo-254ci4.jpg",
+    "kind": "image",
+    "mime": "image/jpeg",
+    "bytes": 146074,
+    "w": 720,
+    "h": 1280,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动",
+    "model": "Kwai-Kolors/Kolors",
+    "prompt": "电影感写实摄影，真实皮肤质感，自然光影，35mm 镜头，浅景深，低饱和冷色调，青蓝色阴影，局部硬光，氛围压抑，远景镜头，远景，雨夜街口，林夏撑着透明伞远远跟在一个穿黄雨衣的身影后面，人物设定——林夏：林夏，26岁，中国女性，黑色低马尾，左眉尾有一颗小痣，穿墨绿色便利店制服外套，胸前别着写有“夏”字的名牌；老人：老人，70岁左右，花白短发，消瘦，戴黑框眼镜，常穿一件褪色的明黄色雨衣，手里总拎着一盒牛奶，胶片颗粒，竖屏 9:16 构图",
+    "target": {
+      "kind": "shot",
+      "shotId": "s-rain-03",
+      "field": "image"
+    },
+    "createdAt": 1795059609147
+  },
+  {
+    "id": "v-mwn09l75-pg3jgo",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "v-mwn09l75-pg3jgo.mp4",
+    "kind": "video",
+    "mime": "video/mp4",
+    "bytes": 2429303,
+    "w": null,
+    "h": null,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动",
+    "model": "MiniMaxAI/MiniMax-H3",
+    "prompt": "镜头缓慢拉远，雨滴打在玻璃窗上，她握紧伞柄迈出一步，黄雨衣身影在远处转过街角，霓虹倒影晃动",
+    "target": {
+      "kind": "shot",
+      "shotId": "s-rain-03",
+      "field": "video"
+    },
+    "createdAt": 1795059814292
+  },
+  {
+    "id": "a-mwn0eeqd-u1tgbf",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "a-mwn0eeqd-u1tgbf.mp3",
+    "kind": "audio",
+    "mime": "audio/mpeg",
+    "bytes": 48895,
+    "w": null,
+    "h": null,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动 CosyVoice",
+    "model": "FunAudioLLM/CosyVoice2-0.5B:anna",
+    "prompt": "又是你……你到底知道些什么？",
+    "target": {
+      "kind": "shot",
+      "shotId": "s-rain-01",
+      "field": "audio",
+      "text": "又是你……你到底知道些什么？"
+    },
+    "createdAt": 1795060039190
+  },
+  {
+    "id": "a-mwn0ef39-4hkjbl",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "a-mwn0ef39-4hkjbl.mp3",
+    "kind": "audio",
+    "mime": "audio/mpeg",
+    "bytes": 60415,
+    "w": null,
+    "h": null,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动 CosyVoice",
+    "model": "FunAudioLLM/CosyVoice2-0.5B:charles",
+    "prompt": "姑娘，明天早上七点，别走东边那座桥。",
+    "target": {
+      "kind": "shot",
+      "shotId": "s-rain-04",
+      "field": "audio",
+      "text": "姑娘，明天早上七点，别走东边那座桥。"
+    },
+    "createdAt": 1795060039653
+  },
+  {
+    "id": "a-mwn0eg85-lhwf80",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "a-mwn0eg85-lhwf80.mp3",
+    "kind": "audio",
+    "mime": "audio/mpeg",
+    "bytes": 84607,
+    "w": null,
+    "h": null,
+    "dur": null,
+    "source": "ai",
+    "provider": "硅基流动 CosyVoice",
+    "model": "FunAudioLLM/CosyVoice2-0.5B:anna",
+    "prompt": "那天之后，城东大桥的事故，没有一个人受伤。",
+    "target": {
+      "kind": "shot",
+      "shotId": "s-rain-05",
+      "field": "audio",
+      "text": "那天之后，城东大桥的事故，没有一个人受伤。"
+    },
+    "createdAt": 1795060041125
+  },
+  {
+    "id": "a-mwn0f7ot-4kyyh2",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "a-mwn0f7ot-4kyyh2.m4a",
+    "kind": "audio",
+    "mime": "audio/mp4",
+    "bytes": 206922,
+    "w": null,
+    "h": null,
+    "dur": null,
+    "source": "upload",
+    "provider": "",
+    "model": "",
+    "prompt": "配乐 bgm-test.m4a",
+    "target": null,
+    "createdAt": 1795060076718
+  },
+  {
+    "id": "r-mwn1w10v-x87xss",
+    "pid": "p-mwn02w1i-f8uawu",
+    "file": "r-mwn1w10v-x87xss.mp4",
+    "kind": "render",
+    "mime": "video/mp4",
+    "bytes": 4163147,
+    "w": 720,
+    "h": 1280,
+    "dur": 24.7,
+    "source": "local",
+    "provider": "ffmpeg",
+    "model": "",
+    "prompt": "第1集 雨夜牛奶",
+    "target": {
+      "kind": "episode",
+      "id": "e-mwn0385o-dn0awc"
+    },
+    "createdAt": 1795062540849
+  }
+]

@@ -24,7 +24,14 @@ await copy('preview/vendor/react.js', 'vendor/react.js')
 await copy('preview/vendor/react-dom.js', 'vendor/react-dom.js')
 await fs.writeFile(path.join(docs, '.nojekyll'), '', 'utf8')
 
-const state = JSON.parse(await fs.readFile(path.join(root, 'preview', 'demo.json'), 'utf8'))
+const legacy = JSON.parse(await fs.readFile(path.join(root, 'preview', 'demo.json'), 'utf8'))
+// 「雨衣老人」是 2026-11-19 那轮验收留下的真实项目：硅基流动出图、图生视频、本机合成，
+// 素材放在 docs/api/media/<pid>/ 下，页面用相对路径 api/media/... 直接读静态文件。
+const sample = JSON.parse(await fs.readFile(path.join(docs, 'demo-projects.json'), 'utf8'))
+const state = {
+  projects: [...sample, ...legacy.projects],
+  activeId: sample[0]?.id || legacy.activeId,
+}
 const settings = structuredClone(DEFAULT_SETTINGS)
 for (const key of CATALOG.keys) settings.keys[key.id] = { set: false, hint: '' }
 
@@ -41,9 +48,10 @@ const view = {
   dataDir: '浏览器本地存储（localStorage）',
 }
 
-const payload = { state, settings: view }
-const file = `// 由 scripts/build-demo.mjs 生成。示例项目来自 preview/demo.json，引擎目录来自 host/providers.js。
+const assets = JSON.parse(await fs.readFile(path.join(docs, 'demo-assets.json'), 'utf8'))
+const payload = { state, settings: view, assets }
+const file = `// 由 scripts/build-demo.mjs 生成。项目来自 docs/demo-projects.json 与 preview/demo.json，引擎目录来自 host/providers.js。
 window.__DEMO__ = ${JSON.stringify(payload)}
 `
 await fs.writeFile(path.join(docs, 'demo-data.js'), file, 'utf8')
-console.log(`docs/demo-data.js ← ${state.projects.length} 个示例项目、${CATALOG.image.length} 个出图引擎（${(file.length / 1024).toFixed(0)} KB）`)
+console.log(`docs/demo-data.js ← ${state.projects.length} 个示例项目、${assets.length} 个素材、${CATALOG.image.length} 个出图引擎（${(file.length / 1024).toFixed(0)} KB）`)

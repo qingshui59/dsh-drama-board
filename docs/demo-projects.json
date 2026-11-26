@@ -1,0 +1,366 @@
+[
+  {
+    "id": "p-mwn02w1i-f8uawu",
+    "name": "雨衣老人",
+    "createdAt": 1795059501750,
+    "updatedAt": 1795062540992,
+    "brief": {
+      "logline": "深夜便利店的女店员发现，每当一位穿雨衣的老人来买牛奶，第二天新闻里就会有一起意外被奇迹般避免，她决定跟踪他。",
+      "genre": "悬疑",
+      "episodes": 2,
+      "style": "写实"
+    },
+    "visual": {
+      "look": "cold",
+      "extra": "胶片颗粒",
+      "negative": "字幕，水印，文字，多余的手指，畸形，模糊"
+    },
+    "narratorVoice": "",
+    "characters": [
+      {
+        "id": "c-linxia",
+        "name": "林夏",
+        "identity": "24小时便利店夜班店员，26岁",
+        "personality": "冷静、执拗，习惯把害怕压在心里；一旦起疑就非要查到底",
+        "appearance": "林夏，26岁，中国女性，黑色低马尾，左眉尾有一颗小痣，穿墨绿色便利店制服外套，胸前别着写有“夏”字的名牌。",
+        "portrait": {
+          "id": "i-mwn04apq-wn72td",
+          "pid": "p-mwn02w1i-f8uawu",
+          "file": "i-mwn04apq-wn72td.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "w": 720,
+          "h": 1280,
+          "dur": null,
+          "source": "ai",
+          "provider": "硅基流动",
+          "createdAt": 1795059567424
+        },
+        "portraits": [],
+        "voice": "anna"
+      },
+      {
+        "id": "c-laoren",
+        "name": "老人",
+        "identity": "70岁左右，常在深夜来便利店买牛奶的神秘顾客",
+        "personality": "沉默、温和，说话像在交代后事；每次只买一盒牛奶",
+        "appearance": "老人，70岁左右，花白短发，消瘦，戴黑框眼镜，常穿一件褪色的明黄色雨衣，手里总拎着一盒牛奶。",
+        "portrait": {
+          "id": "i-mwn04bld-zl2wva",
+          "pid": "p-mwn02w1i-f8uawu",
+          "file": "i-mwn04bld-zl2wva.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "w": 720,
+          "h": 1280,
+          "dur": null,
+          "source": "ai",
+          "provider": "硅基流动",
+          "createdAt": 1795059568563
+        },
+        "portraits": [],
+        "voice": "charles"
+      }
+    ],
+    "episodes": [
+      {
+        "id": "e-mwn0385o-dn0awc",
+        "index": 1,
+        "title": "雨夜牛奶",
+        "hook": "第三个雨夜，穿明黄色雨衣的老人把一盒牛奶放在收银台上，转身走进雨里。",
+        "conflict": "林夏发现，老人每次来买牛奶的第二天，新闻里总有一场事故被奇迹般避开；她调出监控，老人出现的那三秒全是雪花。",
+        "cliffhanger": "她攥着老人留下的旧纸币追出门，雨里只剩一个明黄色背影，正转过街角。",
+        "publish": {
+          "titles": [
+            "雨夜的神秘顾客",
+            "监控拍不到的买牛奶老人",
+            "三盒牛奶三场奇迹"
+          ],
+          "caption": "夜班店员林夏发现，穿雨衣的老人每次买完牛奶，第二天都有意外被神奇避免。当她查看监控时，画面却诡异地变成雪花...你们遇到过这种无法解释的事吗？",
+          "tags": [
+            "AI短剧",
+            "悬疑短剧",
+            "都市怪谈",
+            "细思极恐",
+            "深夜便利店"
+          ],
+          "coverText": "他买牛奶时监控就失灵",
+          "pick": 0
+        },
+        "cover": "s-rain-02",
+        "renders": [
+          {
+            "id": "r-mwn1w10v-x87xss",
+            "pid": "p-mwn02w1i-f8uawu",
+            "file": "r-mwn1w10v-x87xss.mp4",
+            "kind": "render",
+            "mime": "video/mp4",
+            "w": 720,
+            "h": 1280,
+            "dur": 24.7,
+            "source": "local",
+            "provider": "ffmpeg",
+            "createdAt": 1795062540849
+          }
+        ],
+        "bgm": {
+          "id": "a-mwn0f7ot-4kyyh2",
+          "pid": "p-mwn02w1i-f8uawu",
+          "file": "a-mwn0f7ot-4kyyh2.m4a",
+          "kind": "audio",
+          "mime": "audio/mp4",
+          "w": null,
+          "h": null,
+          "dur": 40.14,
+          "source": "upload",
+          "provider": "",
+          "createdAt": 1795060076718
+        }
+      },
+      {
+        "id": "e-mwn0385o-8qvnm1",
+        "index": 2,
+        "title": "桥上的名字",
+        "hook": "林夏跟着黄雨衣走到城东大桥，老人却先开口叫出了她的名字。",
+        "conflict": "老人说，他每次买牛奶，都是为了换一次「提前七点」；桥上那场事故，本来会带走林夏。",
+        "cliffhanger": "老人摘下眼镜，露出一张和林夏父亲一模一样的脸。",
+        "publish": {
+          "titles": [],
+          "caption": "",
+          "tags": [],
+          "coverText": "",
+          "pick": 0
+        },
+        "cover": null,
+        "renders": [],
+        "bgm": null
+      }
+    ],
+    "boards": {
+      "1": [
+        {
+          "id": "s-rain-01",
+          "shotSize": "近景",
+          "camera": "固定",
+          "description": "近景，林夏站在便利店收银台后，抬头看向推门进来的人，冷白色顶灯，窗外下雨",
+          "cast": [
+            "林夏"
+          ],
+          "castSet": true,
+          "dialogue": "林夏：又是你……你到底知道些什么？",
+          "duration": 5,
+          "imagePrompt": "近景，林夏站在便利店收银台后，抬头看向推门进来的人，冷白色顶灯，窗外下雨",
+          "videoPrompt": "镜头固定，5秒。她抬头，眼神从疲惫转为警觉，嘴唇轻动，窗外雨痕缓慢滑落",
+          "image": {
+            "id": "i-mwn052pu-ql9mop",
+            "pid": "p-mwn02w1i-f8uawu",
+            "file": "i-mwn052pu-ql9mop.jpg",
+            "kind": "image",
+            "mime": "image/jpeg",
+            "w": 720,
+            "h": 1280,
+            "dur": null,
+            "source": "ai",
+            "provider": "硅基流动",
+            "createdAt": 1795059603716
+          },
+          "images": [
+            {
+              "id": "i-mwn052pu-ql9mop",
+              "pid": "p-mwn02w1i-f8uawu",
+              "file": "i-mwn052pu-ql9mop.jpg",
+              "kind": "image",
+              "mime": "image/jpeg",
+              "w": 720,
+              "h": 1280,
+              "dur": null,
+              "source": "ai",
+              "provider": "硅基流动",
+              "createdAt": 1795059603716
+            }
+          ],
+          "video": null,
+          "audio": {
+            "id": "a-mwn0eeqd-u1tgbf",
+            "pid": "p-mwn02w1i-f8uawu",
+            "file": "a-mwn0eeqd-u1tgbf.mp3",
+            "kind": "audio",
+            "mime": "audio/mpeg",
+            "w": null,
+            "h": null,
+            "dur": 2.976,
+            "source": "ai",
+            "provider": "硅基流动 CosyVoice",
+            "createdAt": 1795060039190
+          },
+          "audioText": "又是你……你到底知道些什么？"
+        },
+        {
+          "id": "s-rain-02",
+          "shotSize": "特写",
+          "camera": "推",
+          "description": "特写，林夏的手按在收银机上，指尖微微发抖",
+          "cast": [
+            "林夏"
+          ],
+          "castSet": true,
+          "dialogue": "（无）",
+          "duration": 4,
+          "imagePrompt": "特写，林夏的手按在收银机上，指尖微微发抖",
+          "videoPrompt": "镜头缓慢推近，4秒。指尖在收银机按键上轻颤一下，指节收紧",
+          "image": {
+            "id": "i-mwn053lr-f7bhc7",
+            "pid": "p-mwn02w1i-f8uawu",
+            "file": "i-mwn053lr-f7bhc7.jpg",
+            "kind": "image",
+            "mime": "image/jpeg",
+            "w": 720,
+            "h": 1280,
+            "dur": null,
+            "source": "ai",
+            "provider": "硅基流动",
+            "createdAt": 1795059604863
+          },
+          "images": [
+            {
+              "id": "i-mwn053lr-f7bhc7",
+              "pid": "p-mwn02w1i-f8uawu",
+              "file": "i-mwn053lr-f7bhc7.jpg",
+              "kind": "image",
+              "mime": "image/jpeg",
+              "w": 720,
+              "h": 1280,
+              "dur": null,
+              "source": "ai",
+              "provider": "硅基流动",
+              "createdAt": 1795059604863
+            }
+          ],
+          "video": null,
+          "audio": null,
+          "audioText": ""
+        },
+        {
+          "id": "s-rain-03",
+          "shotSize": "远景",
+          "camera": "拉",
+          "description": "远景，雨夜街口，林夏撑着透明伞远远跟在一个穿黄雨衣的身影后面",
+          "cast": [
+            "林夏",
+            "老人"
+          ],
+          "castSet": true,
+          "dialogue": "（无）",
+          "duration": 5,
+          "imagePrompt": "远景，雨夜街口，林夏撑着透明伞远远跟在一个穿黄雨衣的身影后面",
+          "videoPrompt": "镜头缓慢拉远，雨滴打在玻璃窗上，她握紧伞柄迈出一步，黄雨衣身影在远处转过街角，霓虹倒影晃动",
+          "image": {
+            "id": "i-mwn056wo-254ci4",
+            "pid": "p-mwn02w1i-f8uawu",
+            "file": "i-mwn056wo-254ci4.jpg",
+            "kind": "image",
+            "mime": "image/jpeg",
+            "w": 720,
+            "h": 1280,
+            "dur": null,
+            "source": "ai",
+            "provider": "硅基流动",
+            "createdAt": 1795059609147
+          },
+          "images": [
+            {
+              "id": "i-mwn056wo-254ci4",
+              "pid": "p-mwn02w1i-f8uawu",
+              "file": "i-mwn056wo-254ci4.jpg",
+              "kind": "image",
+              "mime": "image/jpeg",
+              "w": 720,
+              "h": 1280,
+              "dur": null,
+              "source": "ai",
+              "provider": "硅基流动",
+              "createdAt": 1795059609147
+            }
+          ],
+          "video": {
+            "id": "v-mwn09l75-pg3jgo",
+            "pid": "p-mwn02w1i-f8uawu",
+            "file": "v-mwn09l75-pg3jgo.mp4",
+            "kind": "video",
+            "mime": "video/mp4",
+            "w": 768,
+            "h": 1376,
+            "dur": 5.167,
+            "source": "ai",
+            "provider": "硅基流动",
+            "createdAt": 1795059814292
+          },
+          "audio": null,
+          "audioText": ""
+        },
+        {
+          "id": "s-rain-04",
+          "shotSize": "中景",
+          "camera": "固定",
+          "description": "中景，便利店门口，老人把一盒牛奶放在收银台上，明黄色雨衣往下滴水，他抬眼看向林夏",
+          "cast": [
+            "老人",
+            "林夏"
+          ],
+          "castSet": true,
+          "dialogue": "老人：（笑）姑娘，明天早上七点，别走东边那座桥。",
+          "duration": 5,
+          "imagePrompt": "中景，便利店门口，老人把一盒牛奶放在收银台上，明黄色雨衣往下滴水，他抬眼看向林夏",
+          "videoPrompt": "固定镜头，5秒。老人放下牛奶，抬眼，嘴角缓慢浮起笑意，雨衣下摆滴下一滴水",
+          "image": null,
+          "images": [],
+          "video": null,
+          "audio": {
+            "id": "a-mwn0ef39-4hkjbl",
+            "pid": "p-mwn02w1i-f8uawu",
+            "file": "a-mwn0ef39-4hkjbl.mp3",
+            "kind": "audio",
+            "mime": "audio/mpeg",
+            "w": null,
+            "h": null,
+            "dur": 3.696,
+            "source": "ai",
+            "provider": "硅基流动 CosyVoice",
+            "createdAt": 1795060039653
+          },
+          "audioText": "姑娘，明天早上七点，别走东边那座桥。"
+        },
+        {
+          "id": "s-rain-05",
+          "shotSize": "全景",
+          "camera": "固定",
+          "description": "全景，雨夜的空镜，便利店招牌在积水里晃动，街口没有人",
+          "cast": [],
+          "castSet": false,
+          "dialogue": "旁白：那天之后，城东大桥的事故，没有一个人受伤。",
+          "duration": 5,
+          "imagePrompt": "全景，雨夜的空镜，便利店招牌在积水里晃动，街口没有人",
+          "videoPrompt": "固定镜头，5秒。雨丝斜落，招牌灯光在水面晃动，画面缓慢变暗",
+          "image": null,
+          "images": [],
+          "video": null,
+          "audio": {
+            "id": "a-mwn0eg85-lhwf80",
+            "pid": "p-mwn02w1i-f8uawu",
+            "file": "a-mwn0eg85-lhwf80.mp3",
+            "kind": "audio",
+            "mime": "audio/mpeg",
+            "w": null,
+            "h": null,
+            "dur": 5.208,
+            "source": "ai",
+            "provider": "硅基流动 CosyVoice",
+            "createdAt": 1795060041125
+          },
+          "audioText": "那天之后，城东大桥的事故，没有一个人受伤。"
+        }
+      ]
+    },
+    "checklist": {}
+  }
+]
